@@ -92,22 +92,26 @@ function changeButtonColor(event) {
 
 const buttons = document.querySelectorAll("#button-container button");
 for (let i = 0; i < buttons.length; i++) {
+
   buttons[i].addEventListener("click", changeButtonColor);
+  
 }
 
 const passengerNumberInput = document.getElementById('input-number');
 const nextButton = document.getElementById('next-button');
 
 passengerNumberInput.addEventListener('input', function() {
-    
-    const passengerNumberValue = passengerNumberInput.value;
 
-    const inputNumber = parseInt(passengerNumberValue)
+    const passengerNumberValue = passengerNumberInput.value;
+    const inputNumber = parseInt(passengerNumberValue);
+
     if (!isNaN(inputNumber)) {
-        
         nextButton.removeAttribute('disabled');
+    } else {
+        nextButton.setAttribute('disabled',true);
     }
 });
+
 
 const nextButtonClick = document.getElementById("next-button");
 const confirmMassage = document.getElementById("confirmation-massage");
@@ -127,17 +131,22 @@ let couponCodeText;
 const couponText = document.getElementById("input-text");
 
 couponText.addEventListener("keyup", function (event) {
-
   couponCodeText = event.target.value; 
   const applyButton = document.getElementById("apply-button");
 
-  if (couponCodeText === "NEW15" || couponCodeText === "Couple20") {
+  if (couponCodeText === "NEW15" || couponCodeText === "COUPLE20") { 
 
     applyButton.removeAttribute("disabled");
 
   }
+   else {
+
+    applyButton.setAttribute("disabled", true); 
+
+  }
   
 });
+
 
 // coupon place 
 const applyButtonClick =document.getElementById("apply-button");
@@ -172,19 +181,16 @@ const applyButtonClick =document.getElementById("apply-button");
   // dynamic div
 
   const newDiv = document.createElement("div");
-  // newDiv.className = "dynamic-element";
   newDiv.style.display = "flex";
   newDiv.style.justifyContent = "space-between";
 
   
   const staticClass = document.createElement("span");
-  // staticClass.className = "static-element";
   staticClass.textContent = "Discount Amount";
   newDiv.appendChild(staticClass);
 
   
   const dynamicDiscount = document.createElement("span");
-  // dynamicDiscount.className = "dynamic-child";
   dynamicDiscount.textContent = discountAmount; 
   newDiv.appendChild(dynamicDiscount);
 
