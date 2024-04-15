@@ -1,10 +1,15 @@
 // scroll page by click button
 function scrollPage() {
+
   const scrollByButtonClick = document.getElementById("entry-ticket-booking");
+
   scrollByButtonClick.addEventListener("click", function scroll() {
+
     const ticketSection = document.getElementById("booking-ticket");
     ticketSection.scrollIntoView({ behavior: "smooth" });
+
   });
+  
 }
 
 
@@ -124,6 +129,8 @@ nextButtonClick.addEventListener("click", function() {
 closeButton.addEventListener("click", function() {
   confirmMassage.close();
 });
+
+
 
 // enable apply
 
