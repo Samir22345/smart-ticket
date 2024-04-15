@@ -47,24 +47,24 @@ function changeButtonColor(event) {
 
     //  Adding seat in New Dynamic Div
     const newDiv = document.createElement("div");
-    // newDiv.className = "dynamic-element";
+    
     newDiv.style.display = "flex";
     newDiv.style.justifyContent = "space-between";
 
     
     const dynamicSeatName = document.createElement("span");
-    // dynamicSeatName.className = "dynamic-element"; 
+    
     dynamicSeatName.textContent = buttonId;
     newDiv.appendChild(dynamicSeatName);
 
     
     const staticClassName = document.createElement("span");
-    // staticClass.className = "static-element";
+    
     staticClassName.textContent = "Economy";
     newDiv.appendChild(staticClassName );
 
     const staticPrice = document.createElement("span");
-    // staticPrice.className = "static-element";
+    
     staticPrice.textContent = "550";
     newDiv.appendChild(staticPrice);
 
